@@ -1,6 +1,3 @@
-import{ TodoPriority } from 'generated/prisma/enums';
-
-
 export class CreateTodoDto {
 title: string;
 description: string;
