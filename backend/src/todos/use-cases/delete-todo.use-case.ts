@@ -4,6 +4,9 @@ import { DeleteTodoRepository } from "../repository/delete-todo.repository";
 
 
 export class DeleteTodoUseCases {
+    delete(id: string) {
+      throw new Error('Method not implemented.');
+    }
     logger: any;
     deleteTodoRepository: any;
     findTodoByIdRepository: any;

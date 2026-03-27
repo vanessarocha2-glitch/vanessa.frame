@@ -1,26 +1,43 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import { UpdateTodoDto } from './dto/update-todo.dto';
+import { CreateTodoUseCase, DeleteTodoUseCases, FindAllTodosUseCases, FindTodoByIdUseCases } from './use-cases';
+
+
 
 @Injectable()
 export class TodosService {
+  findOne(id: string) {
+    throw new Error('Method not implemented.');
+  }
+  remove(arg0: number) {
+    throw new Error('Method not implemented.');
+  }
+  constructor(
+    private readonly createTodoUseCase: CreateTodoUseCase,
+    private readonly findAllTodosUseCase: FindAllTodosUseCases,
+    private readonly findTodoByIdUseCase: FindTodoByIdUseCases,
+    private readonly updateTodoUseCase: CreateTodoUseCase,
+    private readonly deleteTodoUseCase: DeleteTodoUseCases,
+  ) {}
+
   create(createTodoDto: CreateTodoDto) {
-    return 'This action adds a new todo';
+    return this.createTodoUseCase.create(createTodoDto);
   }
 
   findAll() {
-    return `This action returns all todos`;
+    return this.findAllTodosUseCase.findAll();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} todo`;
+  findById(id: string) {
+    return this.findTodoByIdUseCase.findById(id);
   }
 
-  update(id: number, updateTodoDto: UpdateTodoDto) {
-    return `This action updates a #${id} todo`;
+  update(id: string, updateTodoDto: UpdateTodoDto) {
+    return this.updateTodoUseCase.update(id, updateTodoDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} todo`;
+  delete(id: string) {
+    return this.deleteTodoUseCase.delete(id);
   }
 }

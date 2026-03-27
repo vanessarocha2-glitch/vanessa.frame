@@ -3,7 +3,10 @@ import { FindAllTodoRepository } from "../repository/find-all-todos.repository";
 
 
 @Injectable()
-export class findAllTodosUseCases {
+export class FindAllTodosUseCases {
+    findAll() {
+      throw new Error('Method not implemented.');
+    }
     constructor(
         private readonly findAllTodosRepository: FindAllTodoRepository,
         private readonly logger: Logger,

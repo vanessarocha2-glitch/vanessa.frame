@@ -1,5 +1,5 @@
 import { Injectable, Logger, NotFoundException } from "@nestjs/common";
-import { UpdateTodoDto } from "../update-todo.dto";
+import { UpdateTodoDto } from "../dto/update-todo.dto";
 import { UpdateTodoRepository } from "../repository/update-todo.repository";
 
 @Injectable()
